@@ -10,6 +10,7 @@ Bind=/var/lib/jellyfin/config:/config:Z
 Bind=/var/cache/jellyfin:/cache:Z
 Bind=/mnt/media:/media:Z
 [Service]
+ExecStartPre=/bin/mkdir -p ~/.jellyfin/{config,cache}
 SuccessExitStatus=0 143
 [Install]
 WantedBy=multi-user.target
