@@ -1,0 +1,15 @@
+[Unit]
+Description=stash container
+[Container]
+ContainerName=stash
+Image=docker.io/stashapp/stash:latest
+AutoUpdate=registry
+PublishPort=9999:9999/tcp
+UserNS=keep-id:uid=1000,gid=1000
+Bind=/var/lib/stash/config:/config:Z
+Bind=/var/cache/stash:/cache:Z
+Bind=/mnt/media:/media:ro,Z
+[Service]
+SuccessExitStatus=0 143
+[Install]
+WantedBy=multi-user.target
