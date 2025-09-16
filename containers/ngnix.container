@@ -1,0 +1,9 @@
+[Unit]
+Description=Unprivileged NGINX container
+[Container]
+ContainerName=nginx
+Image=docker.io/nginxinc/nginx-unprivileged
+AutoUpdate=registry
+PublishPort=8080:8080
+[Install]
+WantedBy=multi-user.target
