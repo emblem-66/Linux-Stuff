@@ -5,5 +5,7 @@ ContainerName=httpd
 Image=docker.io/httpd
 AutoUpdate=registry
 PublishPort=80:80
+[Service]
+Restart=always
 [Install]
 WantedBy=multi-user.target
