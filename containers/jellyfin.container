@@ -6,6 +6,7 @@ Image=ghcr.io/jellyfin/jellyfin:latest
 AutoUpdate=registry
 PublishPort=8096:8096/tcp
 UserNS=keep-id:uid=1000,gid=1000
+AddDevice=/dev/dri
 Bind=/var/lib/jellyfin/config:/config:Z
 Bind=/var/cache/jellyfin:/cache:Z
 Bind=/mnt/media:/media:Z
