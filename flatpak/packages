@@ -1,5 +1,3 @@
-org.gtk.Gtk3theme.adw-gtk3
-org.gtk.Gtk3theme.adw-gtk3-dark
 runtime/org.freedesktop.Platform.VulkanLayer.MangoHud/x86_64/24.08
 app/org.winehq.Wine/x86_64/wow64-24.08
 io.github.kolunmi.Bazaar
