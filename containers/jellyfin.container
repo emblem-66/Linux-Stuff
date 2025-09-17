@@ -11,6 +11,7 @@ Bind=/var/lib/jellyfin/config:/config:Z
 Bind=/var/cache/jellyfin:/cache:Z
 Bind=/mnt/media:/media:Z
 [Service]
+Restart=on-failure
 ExecStartPre=/bin/mkdir -p ~/.jellyfin/{config,cache}
 SuccessExitStatus=0 143
 [Install]
