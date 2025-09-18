@@ -2,7 +2,7 @@
 Description=Update Flatpaks
 [Timer]
 OnBootSec=2m
-OnUnitActiveSec=8h
+OnUnitActiveSec=4h
 #OnCalendar=0/4:00
 Persistent=true
 #[Timer]
