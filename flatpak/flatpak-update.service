@@ -1,22 +1,3 @@
-#[Unit]
-#Description=Update Flatpaks
-#After=network-online.target
-#Wants=network-online.target
-#[Service]
-#Type=oneshot
-#ExecStart=/usr/bin/flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-#ExecStart=/usr/bin/flatpak remote-modify --disable fedora
-#ExecStart=/usr/bin/flatpak remote-modify --enable flathub
-#ExecStart=/usr/bin/flatpak uninstall --unused -y --noninteractive
-# Install list of flatpak apps from my repo
-#ExecStart=/usr/bin/bash -c 'curl -sSL https://raw.githubusercontent.com/emblem-66/Linux-Stuff/refs/heads/main/flatpak/packages | xargs -r flatpak install --user -y --noninteractive'
-# Install list of flatpak apps from ~/.flatpak-apps.list
-#ExecStart=/usr/bin/bash -c 'cat ~/.flatpak-apps.list | xargs -r flatpak install --user -y --noninteractive'
-#ExecStart=/usr/bin/flatpak update -y --noninteractive
-#[Install]
-#WantedBy=default.target
-
-
 [Unit]
 Description=Update Flatpak
 After=network-online.target
@@ -24,6 +5,7 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
+ExecStartPre=-/usr/bin/flatpak --system remote-delete --force fedora
 ExecStartPre=-/usr/bin/flatpak --system remote-delete --force flathub
 ExecStartPre=-/usr/bin/flatpak --system remote-delete --force flathub-beta
 ExecStart=/usr/bin/flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -36,5 +18,6 @@ ExecStart=/usr/bin/bash -c 'curl -sSL https://raw.githubusercontent.com/emblem-6
 # Install list of flatpak apps from ~/.flatpak-apps.list
 ExecStart=/usr/bin/bash -c 'cat ~/.flatpak-apps.list | xargs -r flatpak install -y --noninteractive'
 ExecStart=/usr/bin/flatpak update --noninteractive --assumeyes
+ExecStart=/usr/bin/flatpak uninstall --unused --noninteractive --assumeyes
 [Install]
 WantedBy=multi-user.target
