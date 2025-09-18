@@ -1,0 +1,31 @@
+[Unit]
+Description=Caddy web server container
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=docker.io/library/caddy:<version>
+# Restart the container unless manually stopped
+RestartPolicy=always
+
+# Capabilities
+CapabilityAdd=NET_ADMIN
+
+# Ports
+PublishPort=80:80
+PublishPort=443:443
+PublishPort=443:443/udp
+
+# Bind mounts
+Volume=/etc/caddy:/etc/caddy
+Volume=/srv/caddy:/srv
+
+# Named volumes (Podman will manage them under /var/lib/containers/storage/volumes)
+Volume=caddy_data:/data
+Volume=caddy_config:/config
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
