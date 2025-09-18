@@ -9,7 +9,7 @@ Image=docker.io/library/caddy:<version>
 RestartPolicy=always
 
 # Capabilities
-CapabilityAdd=NET_ADMIN
+#CapabilityAdd=NET_ADMIN
 
 # Ports
 PublishPort=80:80
