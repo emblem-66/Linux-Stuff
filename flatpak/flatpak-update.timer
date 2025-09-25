@@ -1,8 +1,9 @@
 [Unit]
-Description=Update Flatpaks
+Description=Update system Flatpaks daily
+
 [Timer]
-OnBootSec=2m
-OnUnitActiveSec=4h
+OnCalendar=*-*-* */6:00:00
 Persistent=true
+
 [Install]
 WantedBy=timers.target
