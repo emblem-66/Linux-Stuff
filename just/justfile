@@ -37,3 +37,8 @@ _setup-homebrew:
     #!/bin/bash
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# system info
+_info:
+    #!/bin/bash
+    rpm-ostree status -v
+    fastfetch
