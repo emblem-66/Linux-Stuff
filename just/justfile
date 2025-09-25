@@ -1,5 +1,5 @@
 # bootc upgrade
-_bootc-upgrade-reboot:
+_bootc-upgrade:
     #!/bin/bash
     bootc upgrade --quiet
 
