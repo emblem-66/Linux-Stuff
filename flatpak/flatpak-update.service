@@ -19,5 +19,5 @@ Type=oneshot
 #ExecStart=/usr/bin/bash -c 'cat ~/.flatpak-apps.list | xargs -r flatpak install -y --noninteractive'
 ExecStart=/usr/bin/flatpak update --noninteractive --assumeyes
 ExecStart=/usr/bin/flatpak uninstall --unused --noninteractive --assumeyes
-[Install]
-WantedBy=multi-user.target
+#[Install]
+#WantedBy=multi-user.target
