@@ -1,44 +1,44 @@
 # bootc upgrade
-_bootc-upgrade:
+bootc-upgrade:
     #!/bin/bash
     bootc upgrade --quiet
 
 # bootc upgrade & reboot
-_bootc-upgrade-reboot:
+bootc-upgrade-reboot:
     #!/bin/bash
     bootc upgrade --apply --quiet
 
 # Flatpak - Add Flathub repo
-_flatpak-add-flathub:
+flatpak-add-flathub:
     #!/bin/bash
     flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Flatpak - Remove Fedora repo
-_flatpak-add-fedora:
+flatpak-add-fedora:
     #!/bin/bash
     flatpak remote-delete --system --force fedora
 
 # Flatpak - Install flatpaks from github
-_install-github-flatpaks:
+install-github-flatpaks:
     #!/bin/bash
     FLATPAK_LIST="$(curl https://github.com/emblem-66/Linux-Stuff/blob/main/flatpak/packages | tr '\n' ' ')"
     echo "Installing Flatpaks.."
     flatpak --system -y --noninteractive install ${FLATPAK_LIST}
 
 # Flatpak - Install flatpaks from ~/.flatpak-apps
-_install-local-flatpaks:
+install-local-flatpaks:
     #!/bin/bash
     FLATPAK_LIST="$(cat ~/.flatpak-apps | tr '\n' ' ')"
     echo "Installing Flatpaks.."
     flatpak --system -y --noninteractive install ${FLATPAK_LIST}
 
 # Homebrew
-_setup-homebrew:
+setup-homebrew:
     #!/bin/bash
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # system info
-_info:
+info:
     #!/bin/bash
     rpm-ostree status -v
     fastfetch
