@@ -26,7 +26,7 @@ _install-github-flatpaks:
     flatpak --system -y --noninteractive install ${FLATPAK_LIST}
 
 # Flatpak - Install flatpaks from ~/.flatpak-apps
-_install-github-flatpaks:
+_install-local-flatpaks:
     #!/bin/bash
     FLATPAK_LIST="$(cat ~/.flatpak-apps | tr '\n' ' ')"
     echo "Installing Flatpaks.."
