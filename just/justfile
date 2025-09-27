@@ -14,9 +14,15 @@ flatpak-add-flathub:
     flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Flatpak - Remove Fedora repo
-flatpak-add-fedora:
+flatpak-remove-fedora:
     #!/bin/bash
     flatpak remote-delete --system --force fedora
+
+# Flatpak - Update
+flatpak-update:
+    #!/bin/bash
+    flatpak update -y --noninteractive
+    flatpak remove -y --noninteractive --unused
 
 # Flatpak - Install flatpaks from github
 install-github-flatpaks:
