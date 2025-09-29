@@ -20,6 +20,6 @@ Type=oneshot
 ### ExecStart=/usr/bin/flatpak update --noninteractive --assumeyes
 ### ExecStart=/usr/bin/flatpak uninstall --unused --noninteractive --assumeyes
 #ExecStart=/usr/bin/just flatpak-update
-ExecStart=/usr/bin/just --justfile /usr/etc/justfile
+ExecStart=/usr/bin/just --justfile /usr/etc/justfile flatpak-update
 [Install]
 WantedBy=multi-user.target
