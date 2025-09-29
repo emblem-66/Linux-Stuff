@@ -42,18 +42,8 @@ install-local-flatpaks:
 setup-homebrew:
     #!/bin/bash
     #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	# Instal Homebrew
-	case "$(rpm -E %{_arch})" in
-		x86_64)
-			curl -fLs \
-				https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash -s
-			/home/linuxbrew/.linuxbrew/bin/brew update
-			;;
-		*)
-			mkdir /home/linuxbrew
-			;;
-	esac
-
+    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+    [[ -d /home/linuxbrew/.linuxbrew && $- == *i* ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     # Universal Blue workaround
     # https://www.ypsidanger.com/homebrew-is-great-on-linux/
     # https://github.com/ublue-os/config/blob/main/build/ublue-os-just/etc-profile.d/brew.sh?ref=ypsidanger.com
