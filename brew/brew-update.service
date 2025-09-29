@@ -1,0 +1,10 @@
+[Unit]
+Description=Install Homebrew
+ConditionPathExists=/var/home/linuxbrew/.linuxbrew/bin/brew
+
+[Service]
+Type=oneshot
+#ExecStart=/usr/bin/bash -c "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash"
+
+[Install]
+WantedBy=multi-user.target
