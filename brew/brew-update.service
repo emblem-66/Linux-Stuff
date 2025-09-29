@@ -1,5 +1,5 @@
 [Unit]
-Description=Install Homebrew
+Description=Update Homebrew
 ConditionPathExists=/var/home/linuxbrew/.linuxbrew/bin/brew
 
 [Service]
