@@ -1,56 +1,58 @@
-# bootc upgrade
+### BOOTC
 bootc-upgrade:
     #!/bin/bash
     bootc upgrade --quiet
 
-# bootc upgrade & reboot
 bootc-upgrade-reboot:
     #!/bin/bash
     bootc upgrade --apply --quiet
 
-# Flatpak - Add Flathub repo
+### FLATPAK
 flatpak-add-flathub:
     #!/bin/bash
     flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Flatpak - Remove Fedora repo
 flatpak-remove-fedora:
     #!/bin/bash
     flatpak remote-delete --system --force fedora
 
-# Flatpak - Update
 flatpak-update:
     #!/bin/bash
     flatpak update -y --noninteractive
     flatpak remove -y --noninteractive --unused
 
-# Flatpak - Install flatpaks from github
-install-github-flatpaks:
+flatpak-github-packages:
     #!/bin/bash
     FLATPAK_LIST="$(curl https://github.com/emblem-66/Linux-Stuff/blob/main/flatpak/packages | tr '\n' ' ')"
-    echo "Installing Flatpaks.."
     flatpak --system -y --noninteractive install ${FLATPAK_LIST}
 
-# Flatpak - Install flatpaks from ~/.flatpak-apps
-install-local-flatpaks:
+flatpak-local-packages:
     #!/bin/bash
     FLATPAK_LIST="$(cat ~/.flatpak-apps | tr '\n' ' ')"
-    echo "Installing Flatpaks.."
     flatpak --system -y --noninteractive install ${FLATPAK_LIST}
 
-# Homebrew
+### HOMEBREW
 homebrew-setup:
     #!/bin/bash
-    #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    #curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
     [[ -d /home/linuxbrew/.linuxbrew && $- == *i* ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     # Universal Blue workaround
     # https://www.ypsidanger.com/homebrew-is-great-on-linux/
     # https://github.com/ublue-os/config/blob/main/build/ublue-os-just/etc-profile.d/brew.sh?ref=ypsidanger.com
     #[[ -d /home/linuxbrew/.linuxbrew && $- == *i* ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# system info
-info:
+homebrew-update:
     #!/bin/bash
-    rpm-ostree status -v
-    fastfetch
+    brew update
+    brew upgrade
+
+homebrew-github-packages:
+    #!/bin/bash
+    BREW_LIST="$(curl https://github.com/emblem-66/Linux-Stuff/blob/main/brew/packages | tr '\n' ' ')"
+    brew install ${BREW_LIST}
+
+homebrew-local-packages:
+    #!/bin/bash
+    BREW_LIST="$(cat ~/.brew-packages | tr '\n' ' ')"
+    brew install ${BREW_LIST}
