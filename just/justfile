@@ -8,6 +8,16 @@ bootc-upgrade-reboot:
     bootc upgrade --apply --quiet
 
 ### FLATPAK
+
+flatpak-setup:
+    #!/bin/bash
+    flatpak remote-delete --system --force fedora
+    flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    FLATPAK_LIST="$(curl https://github.com/emblem-66/Linux-Stuff/blob/main/flatpak/packages | tr '\n' ' ')"
+    flatpak --system -y --noninteractive install ${FLATPAK_LIST}
+    FLATPAK_LIST="$(cat ~/.flatpak-apps | tr '\n' ' ')"
+    flatpak --system -y --noninteractive install ${FLATPAK_LIST}
+
 flatpak-add-flathub:
     #!/bin/bash
     flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
