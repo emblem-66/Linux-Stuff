@@ -1,5 +1,5 @@
 [Unit]
-Description=Apply bootc updates
+Description=Bootc update
 Documentation=man:bootc(8)
 ConditionPathExists=/run/ostree-booted
 
