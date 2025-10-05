@@ -1,0 +1,17 @@
+[Unit]
+Description=Update Flatpak
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+#ExecStartPre=-/usr/bin/flatpak --system remote-delete --force fedora
+#ExecStart=/usr/bin/flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# Install list of flatpak apps from my repo
+#ExecStart=/usr/bin/bash -c 'curl -sSL https://raw.githubusercontent.com/emblem-66/Linux-Stuff/refs/heads/main/flatpak/packages | xargs -r flatpak install -y --noninteractive'
+# Install list of flatpak apps from ~/.flatpak-apps.list
+#ExecStart=/usr/bin/bash -c 'cat /var/home/pc/.flatpak-apps.list | xargs -r flatpak install -y --noninteractive'
+ExecStart=/usr/bin/just --justfile /usr/share/just/justfile flatpak-github-packages
+
+[Install]
+WantedBy=multi-user.target
