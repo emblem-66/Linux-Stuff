@@ -10,8 +10,9 @@ bootc-upgrade-reboot:
 ### FLATPAK
 flatpak-setup:
     #!/bin/bash
-    flatpak remote-delete --system --force fedora
-    flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-delete --force fedora
+    flatpak remote-delete --force fedora-testing
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak-update:
     #!/bin/bash
