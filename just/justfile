@@ -30,14 +30,11 @@ flatpak-update:
     flatpak update -y --noninteractive
     flatpak remove -y --noninteractive --unused
 
-flatpak-github-packages:
+flatpak-packages:
     #!/bin/bash
     FLATPAK_LIST="$(curl https://github.com/emblem-66/Linux-Stuff/blob/main/flatpak/packages | tr '\n' ' ')"
     flatpak --system -y --noninteractive install ${FLATPAK_LIST}
-
-flatpak-local-packages:
-    #!/bin/bash
-    FLATPAK_LIST="$(cat ~/.flatpak-apps | tr '\n' ' ')"
+    FLATPAK_LIST="$(cat ~/.flatpak-packages | tr '\n' ' ')"
     flatpak --system -y --noninteractive install ${FLATPAK_LIST}
 
 ### HOMEBREW
@@ -56,12 +53,9 @@ homebrew-update:
     brew update
     brew upgrade
 
-homebrew-github-packages:
+homebrew-packages:
     #!/bin/bash
     BREW_LIST="$(curl https://github.com/emblem-66/Linux-Stuff/blob/main/brew/packages | tr '\n' ' ')"
     brew install ${BREW_LIST}
-
-homebrew-local-packages:
-    #!/bin/bash
     BREW_LIST="$(cat ~/.brew-packages | tr '\n' ' ')"
     brew install ${BREW_LIST}
