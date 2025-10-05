@@ -5,6 +5,7 @@ ConditionPathExists=/var/home/linuxbrew/.linuxbrew/bin/brew
 [Service]
 Type=oneshot
 #ExecStart=/usr/bin/bash -c "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash"
+ExecStart=/usr/bin/just --justfile /usr/share/just/justfile homebrew-update
 
 [Install]
 WantedBy=multi-user.target
