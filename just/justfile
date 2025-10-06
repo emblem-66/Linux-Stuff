@@ -21,6 +21,7 @@ flatpak-update:
 
 flatpak-packages:
     #!/bin/bash
+    pwd
     FLATPAK_LIST="$(curl https://github.com/emblem-66/Linux-Stuff/blob/main/flatpak/packages | tr '\n' ' ')"
     flatpak --system -y --noninteractive install ${FLATPAK_LIST}
     FLATPAK_LIST="$(cat ~/.flatpak-packages | tr '\n' ' ')"
