@@ -1,9 +1,0 @@
-[Unit]
-Description=Bootc update
-Documentation=man:bootc(8)
-ConditionPathExists=/run/ostree-booted
-
-[Service]
-Type=oneshot
-#ExecStart=/usr/bin/bootc upgrade --quiet
-ExecStart=/usr/bin/just --justfile /usr/share/just/justfile bootc-upgrade
