@@ -1,18 +1,20 @@
-[Unit]
-Description=Jellyfin container
 [Container]
 ContainerName=jellyfin
-Image=ghcr.io/jellyfin/jellyfin:latest
+Image=docker.io/jellyfin/jellyfin:latest
 AutoUpdate=registry
 PublishPort=8096:8096/tcp
-UserNS=keep-id:uid=1000,gid=1000
-#AddDevice=/dev/dri
-Bind=/var/lib/jellyfin/config:/config:Z
-Bind=/var/cache/jellyfin:/cache:Z
-Bind=/mnt/media:/media:Z
+UserNS=keep-id
+
+# Internal volumes (managed by Podman)
+Volume=jellyfin-config:/config:Z
+Volume=jellyfin-cache:/cache:Z
+
+# External bind mount for media
+Volume=/var/home/pc/jellyfin-media:/media:Z
+
 [Service]
-Restart=on-failure
-ExecStartPre=/bin/mkdir -p ~/.jellyfin/{config,cache}
+# Make systemd treat exit code 143 (SIGTERM) as normal
 SuccessExitStatus=0 143
+
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
