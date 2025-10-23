@@ -10,7 +10,7 @@ Volume=jellyfin-config:/config:Z
 Volume=jellyfin-cache:/cache:Z
 
 # External bind mount for media
-Volume=/var/home/pc/jellyfin-media:/media:Z
+Volume=/var/home/pc/jellyfin-media:/media:ro,Z
 
 [Service]
 # Make systemd treat exit code 143 (SIGTERM) as normal
