@@ -1,16 +1,47 @@
-[Unit]
-Description=stash container
+#[Unit]
+#Description=stash container
+#[Container]
+#ContainerName=stash
+#Image=docker.io/stashapp/stash:latest
+#AutoUpdate=registry
+#PublishPort=9999:9999/tcp
+#UserNS=keep-id:uid=1000,gid=1000
+#Volume=stash-config:/config:Z
+#Volume=stash-cache:/cache:Z
+#Volume=%h/stash-media:/media:ro,Z
+#[Service]
+#Restart=always
+#SuccessExitStatus=0 143
+#[Install]
+#WantedBy=default.target
+
+
+
+
 [Container]
-ContainerName=stash
 Image=docker.io/stashapp/stash:latest
+ContainerName=stash
 AutoUpdate=registry
-PublishPort=9999:9999/tcp
-UserNS=keep-id:uid=1000,gid=1000
-Volume=stash-config:/config:Z
+PublishPort=9999:9999
+
+Environment=STASH_STASH=/data/
+Environment=STASH_GENERATED=/generated/
+Environment=STASH_METADATA=/metadata/
+Environment=STASH_CACHE=/cache/
+Environment=STASH_PORT=9999
+
+# Volumes
+Volume=/etc/localtime:/etc/localtime:ro,Z
+Volume=stash-config:/root/.stash:Z
+Volume=stast-metadata:/metadata:Z
 Volume=stash-cache:/cache:Z
-Volume=%h/stash-media:/media:ro,Z
+Volume=stash-blobs:/blobs:Z
+Volume=stash-generated:/generated:Z
+
+Volume=/var/home/pc/stash-data:/data:ro,Z
 [Service]
 Restart=always
 SuccessExitStatus=0 143
+
 [Install]
 WantedBy=default.target
