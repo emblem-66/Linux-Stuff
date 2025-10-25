@@ -17,4 +17,5 @@ Volume=/var/home/pc/jellyfin-media:/media:ro,Z
 SuccessExitStatus=0 143
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
+#WantedBy=default.target
