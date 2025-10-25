@@ -1,19 +1,35 @@
-[Container]
-Image=docker.io/library/caddy:latest
-ContainerName=caddy
-AutoUpdate=registry
-Volume=caddy-data:/data
-Volume=caddy-config:/config
-Volume=/etc/caddy/Caddyfile:/etc/caddy/Caddyfile:Z
-PublishPort=80:80
-PublishPort=443:443
+#[Container]
+#Image=docker.io/library/caddy:latest
+#ContainerName=caddy
+#AutoUpdate=registry
+#Volume=caddy-data:/data
+#Volume=caddy-config:/config
+#Volume=/etc/caddy/Caddyfile:/etc/caddy/Caddyfile:Z
+#PublishPort=80:80
+#PublishPort=443:443
 
-[Service]
-Restart=always
-TimeoutStartSec=900
+#[Service]
+#Restart=always
+#TimeoutStartSec=900
 
-[Install]
-WantedBy= default.target
+#[Install]
+#WantedBy= default.target
 
 
 #WantedBy=multi-user.target default.target
+
+
+[Container]
+ContainerName=caddy
+Image=docker.io/library/caddy:latest
+AutoUpdate=registry
+#Network=host
+Volume=/etc/caddy:/etc/caddy
+Volume=/var/lib/caddy:/data
+ExecStartPre=/bin/sh -c 'mkdir -p /etc/caddy /var/lib/caddy'
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
