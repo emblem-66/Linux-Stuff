@@ -6,9 +6,9 @@ Image=docker.io/stashapp/stash:latest
 AutoUpdate=registry
 PublishPort=9999:9999/tcp
 UserNS=keep-id:uid=1000,gid=1000
-Bind=/var/lib/stash/config:/config:Z
-Bind=/var/cache/stash:/cache:Z
-Bind=/mnt/media:/media:ro,Z
+Volume=stash-config:/config:Z
+Volume=stash-cache:/cache:Z
+Volume=%h/stash-media:/media:ro,Z
 [Service]
 Restart=always
 SuccessExitStatus=0 143
