@@ -13,4 +13,4 @@ Volume=%h/stash-media:/media:ro,Z
 Restart=always
 SuccessExitStatus=0 143
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
