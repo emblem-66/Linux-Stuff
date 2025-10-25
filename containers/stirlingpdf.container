@@ -1,0 +1,21 @@
+[Container]
+Image=docker.io/stirlingtools/stirling-pdf:latest
+AutoUpdate=registry
+PublishPort=8080:8080
+
+# Volume mounts
+Volume=StirlingPDF-trainingData:/usr/share/tessdata
+Volume=StirlingPDF-extraConfigs:/configs
+Volume=StirlingPDF-customFiles:/customFiles
+Volume=StirlingPDF-logs:/logs
+Volume=StirlingPDF-pipeline:/pipeline
+
+# Environment variables
+Environment=DISABLE_ADDITIONAL_FEATURES=true
+Environment=LANGS=en_GB
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
