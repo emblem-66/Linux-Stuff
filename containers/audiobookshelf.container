@@ -1,4 +1,3 @@
-# audiobookshelf.container
 [Container]
 ContainerName=audiobookshelf
 Image=ghcr.io/advplyr/audiobookshelf:latest
