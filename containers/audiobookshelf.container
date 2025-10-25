@@ -5,11 +5,11 @@ Image=ghcr.io/advplyr/audiobookshelf:latest
 AutoUpdate=registry
 NoNewPrivileges=true
 PublishPort=13378:80
-Volume=</path/to/audiobooks>:/audiobooks
-Volume=</path/to/books>:/books
-Volume=</path/to/podcasts>:/podcasts
-Volume=</path/to/config>:/config
-Volume=</path/to/metadata>:/metadata
+Volume=/var/home/pc/abs-media/audiobooks:/audiobooks
+#Volume=</path/to/books>:/books
+Volume=/var/home/pc/abs-media/podcasts:/podcasts
+Volume=audiobookshelf_config:/config
+Volume=audiobookshelf_metadata:/metadata
 
 [Service]
 Restart=always
