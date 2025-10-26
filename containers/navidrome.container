@@ -1,0 +1,19 @@
+[Container]
+ContainerName=navidrome
+Image=docker.io/deluan/navidrome:latest
+AutoUpdate=registry
+PublishPort=4533:4533/tcp
+UserNS=keep-id
+
+# Internal volumes (managed by Podman)
+Volume=navidrome-data:/data:Z
+
+# External bind mount for media
+Volume=/var/home/pc/navidrome-media:/media:ro,Z
+
+[Service]
+# Make systemd treat exit code 143 (SIGTERM) as normal
+SuccessExitStatus=0 143
+
+[Install]
+WantedBy=default.target
