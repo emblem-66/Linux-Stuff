@@ -4,15 +4,15 @@ Image=ghcr.io/advplyr/audiobookshelf:latest
 AutoUpdate=registry
 NoNewPrivileges=true
 PublishPort=13378:80
-#Volume=/var/home/pc/abs-media/audiobooks:/audiobooks
+#Volume=/var/home/pc/abs-media/audiobooks:/audiobooks:ro,Z
 #Volume=</path/to/books>:/books
 #Volume=/var/home/pc/abs-media/podcasts:/podcasts
 #Volume=audiobookshelf_config:/config
 #Volume=audiobookshelf_metadata:/metadata
-Volume=/mnt/das/containers/audiobookshelf/config:/config
-Volume=/mnt/das/containers/audiobookshelf/metadata:/metadata
+Volume=/mnt/das/containers/audiobookshelf/config:/config:Z
+Volume=/mnt/das/containers/audiobookshelf/metadata:/metadata:Z
 
-Volume=/mnt/das/data/media/audiobooks:/audiobooks
+Volume=/mnt/das/data/media/audiobooks:/audiobooks:ro,Z
 #Volume=</path/to/books>:/books
 #Volume=/var/home/pc/abs-media/podcasts:/podcasts
 
