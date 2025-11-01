@@ -9,8 +9,8 @@ PublishPort=13378:80
 #Volume=/var/home/pc/abs-media/podcasts:/podcasts
 #Volume=audiobookshelf_config:/config
 #Volume=audiobookshelf_metadata:/metadata
-Volume=/mnt/das/containers/data/audiobookshelf/config:/config
-Volume=/mnt/das/containers/data/audiobookshelf/metadata:/metadata
+Volume=/mnt/das/containers/audiobookshelf/config:/config
+Volume=/mnt/das/containers/audiobookshelf/metadata:/metadata
 
 Volume=/mnt/das/data/media/audiobooks:/audiobooks
 #Volume=</path/to/books>:/books
