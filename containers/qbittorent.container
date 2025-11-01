@@ -20,8 +20,8 @@ PublishPort=6881:6881
 PublishPort=6881:6881/udp
 
 # Volume mounts
-Volume=qbittorrent-appdata:/config:Z
-Volume=/var/home/pc/Downloads/qbittorent:/downloads:Z
+Volume=/mnt/das/containers/qbittorrent/config:/config:Z
+Volume=/mnt/das/data/downloads/qbittorent:/downloads:Z
 
 # Restart policy
 Restart=unless-stopped
