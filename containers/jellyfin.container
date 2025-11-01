@@ -8,8 +8,8 @@ UserNS=keep-id
 # Internal volumes (managed by Podman)
 #Volume=jellyfin-config:/config:Z
 #Volume=jellyfin-cache:/cache:Z
-Volume=/mnt/das/containers/data/jellyfin/config:/config:Z
-Volume=/mnt/das/containers/data/jellyfin/cache:/cache:Z
+Volume=/mnt/das/containers/jellyfin/config:/config:Z
+Volume=/mnt/das/containers/jellyfin/cache:/cache:Z
 
 # External bind mount for media
 Volume=/var/home/pc/jellyfin-media:/media:ro,Z
