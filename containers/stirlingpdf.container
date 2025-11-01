@@ -4,11 +4,11 @@ AutoUpdate=registry
 PublishPort=8888:8080
 
 # Volume mounts
-Volume=StirlingPDF-trainingData:/usr/share/tessdata
-Volume=StirlingPDF-extraConfigs:/configs
-Volume=StirlingPDF-customFiles:/customFiles
-Volume=StirlingPDF-logs:/logs
-Volume=StirlingPDF-pipeline:/pipeline
+Volume=StirlingPDF-trainingData:/usr/share/tessdata:Z
+Volume=StirlingPDF-extraConfigs:/configs:Z
+Volume=StirlingPDF-customFiles:/customFiles:Z
+Volume=StirlingPDF-logs:/logs:Z
+Volume=StirlingPDF-pipeline:/pipeline:Z
 
 # Environment variables
 Environment=DISABLE_ADDITIONAL_FEATURES=true
