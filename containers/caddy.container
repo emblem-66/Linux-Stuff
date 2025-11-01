@@ -24,8 +24,8 @@ ContainerName=caddy
 Image=docker.io/library/caddy:latest
 AutoUpdate=registry
 #Network=host
-Volume=/etc/caddy:/etc/caddy
-Volume=/mnt/das/containers/caddy/data:/data
+Volume=/etc/caddy:/etc/caddy:ro,Z
+Volume=/mnt/das/containers/caddy/data:/data:Z
 ExecStartPre=/bin/sh -c 'mkdir -p /etc/caddy /var/lib/caddy'
 
 [Service]
