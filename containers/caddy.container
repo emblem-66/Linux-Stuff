@@ -26,7 +26,7 @@ AutoUpdate=registry
 #Network=host
 Volume=/etc/caddy:/etc/caddy:Z
 Volume=/mnt/das/containers/caddy/data:/data:Z
-ExecStartPre=/bin/sh -c 'mkdir -p /etc/caddy /var/lib/caddy'
+#ExecStartPre=/bin/sh -c 'mkdir -p /etc/caddy /var/lib/caddy'
 
 [Service]
 Restart=always
