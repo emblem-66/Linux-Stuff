@@ -6,8 +6,10 @@ PublishPort=8096:8096/tcp
 UserNS=keep-id
 
 # Internal volumes (managed by Podman)
-Volume=jellyfin-config:/config:Z
-Volume=jellyfin-cache:/cache:Z
+#Volume=jellyfin-config:/config:Z
+#Volume=jellyfin-cache:/cache:Z
+Volume=/mnt/das/containers/data/jellyfin/config:/config:Z
+Volume=/mnt/das/containers/data/jellyfin/cache:/cache:Z
 
 # External bind mount for media
 Volume=/var/home/pc/jellyfin-media:/media:ro,Z
