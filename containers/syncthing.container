@@ -8,10 +8,10 @@ PublishPort=22000:22000/udp
 PublishPort=21027:21027/udp
 UserNS=keep-id:uid=1000,gid=1000
 # Internal volumes (managed by Podman)
-Volume=syncthing-config:/config:Z
+Volume=/mnt/das/containers/config:/config:Z
 # External bind mount for media
-Volume=/var/home/pc/syncthing-share:/share:Z
-Volume=/var/home/pc/syncthing-photo_backup:/photo_backup:Z
+Volume=/mnt/das/data/syncthing/share:/share:Z
+Volume=/mnt/das/data/syncthing/backup/photo:/photo_backup:Z
 [Service]
 # Make systemd treat exit code 143 (SIGTERM) as normal
 SuccessExitStatus=0 143
