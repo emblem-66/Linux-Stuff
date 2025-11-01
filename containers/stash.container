@@ -24,21 +24,31 @@ ContainerName=stash
 AutoUpdate=registry
 PublishPort=9999:9999
 
-Environment=STASH_STASH=/data/
-Environment=STASH_GENERATED=/generated/
-Environment=STASH_METADATA=/metadata/
-Environment=STASH_CACHE=/cache/
-Environment=STASH_PORT=9999
+#Environment=STASH_STASH=/data/
+#Environment=STASH_GENERATED=/generated/
+#Environment=STASH_METADATA=/metadata/
+#Environment=STASH_CACHE=/cache/
+#Environment=STASH_PORT=9999
 
 # Volumes
-Volume=/etc/localtime:/etc/localtime:ro,Z
-Volume=stash-config:/root/.stash:Z
-Volume=stast-metadata:/metadata:Z
-Volume=stash-cache:/cache:Z
-Volume=stash-blobs:/blobs:Z
-Volume=stash-generated:/generated:Z
+#Volume=/etc/localtime:/etc/localtime:ro,Z
+#Volume=stash-config:/root/.stash:Z
+#Volume=stast-metadata:/metadata:Z
+#Volume=stash-cache:/cache:Z
+#Volume=stash-blobs:/blobs:Z
+#Volume=stash-generated:/generated:Z
 
-Volume=/var/home/pc/stash-data:/data:ro,Z
+Volume=/etc/localtime:/etc/localtime:ro,Z
+Volume=/mnt/das/containers/stash/config:config:Z
+Volume=/mnt/das/containers/stast/metadata:/metadata:Z
+Volume=/mnt/das/containers/stash/cache:/cache:Z
+Volume=/mnt/das/containers/stash/blobs:/blobs:Z
+Volume=/mnt/das/containers/stash/generated:/generated:Z
+
+
+#Volume=/var/home/pc/stash-data:/data:ro,Z
+Volume=/mnt/das/data/media/videox:/data:ro,Z
+
 [Service]
 Restart=always
 SuccessExitStatus=0 143
