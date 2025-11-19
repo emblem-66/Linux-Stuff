@@ -7,9 +7,9 @@ UserNS=keep-id
 
 # Internal volumes (managed by Podman)
 #Volume=navidrome-data:/data:Z
-Volume=/mnt/das/containers/navidrome/data:/data:Z
+Volume=/mnt/orico_a/containers/navidrome/data:/data:Z
 # External bind mount for media
-Volume=/mnt/das/data/media/music:/media:ro,Z
+#Volume=/mnt/das/data/media/music:/media:ro,Z
 
 # External bind mount for media
 Volume=/mnt/orico_a/media_music:/media:ro,Z
