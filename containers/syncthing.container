@@ -12,8 +12,8 @@ UserNS=keep-id:uid=1000,gid=1000
 Volume=/mnt/orico_a/containers/syncthing/config:/config:Z
 
 # External bind mount for media
-Volume=/mnt/orico_a/data/syncthing/share:/share:Z
-Volume=/mnt/orico_a/data/syncthing/backup/photo:/photo_backup:Z
+Volume=/mnt/orico_a/data_syncthing/share:/share:Z
+Volume=/mnt/orico_a/data_syncthing/backup/photo:/photo_backup:Z
 
 [Service]
 # Make systemd treat exit code 143 (SIGTERM) as normal
