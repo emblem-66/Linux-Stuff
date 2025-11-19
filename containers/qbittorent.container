@@ -21,7 +21,7 @@ PublishPort=6881:6881/udp
 
 # Volume mounts
 Volume=/mnt/orico_a/containers/qbittorrent/config:/config:Z
-Volume=/mnt/orico_a/data/downloads/qbittorent:/downloads:Z
+Volume=/mnt/orico_a/data_downloads/qbittorent:/downloads:Z
 
 
 # Restart policy
