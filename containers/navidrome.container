@@ -11,6 +11,9 @@ Volume=/mnt/das/containers/navidrome/data:/data:Z
 # External bind mount for media
 Volume=/mnt/das/data/media/music:/media:ro,Z
 
+# External bind mount for media
+Volume=/mnt/orico_a/media/music:/media:ro,Z
+
 [Service]
 # Make systemd treat exit code 143 (SIGTERM) as normal
 SuccessExitStatus=0 143
