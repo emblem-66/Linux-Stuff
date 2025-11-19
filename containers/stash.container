@@ -39,15 +39,15 @@ PublishPort=9999:9999
 #Volume=stash-generated:/generated:Z
 
 Volume=/etc/localtime:/etc/localtime:ro,Z
-Volume=/mnt/das/containers/stash/config:config:Z
-Volume=/mnt/das/containers/stast/metadata:/metadata:Z
-Volume=/mnt/das/containers/stash/cache:/cache:Z
-Volume=/mnt/das/containers/stash/blobs:/blobs:Z
-Volume=/mnt/das/containers/stash/generated:/generated:Z
+Volume=/mnt/orico_a/containers/stash/config:config:Z
+Volume=/mnt/orico_a/containers/stast/metadata:/metadata:Z
+Volume=/mnt/orico_a/containers/stash/cache:/cache:Z
+Volume=/mnt/orico_a/containers/stash/blobs:/blobs:Z
+Volume=/mnt/orico_a/containers/stash/generated:/generated:Z
 
 
 #Volume=/var/home/pc/stash-data:/data:ro,Z
-Volume=/mnt/das/data/media/videox:/data:ro,Z
+Volume=/mnt/orico_a/data/media/videox:/data:ro,Z
 
 [Service]
 Restart=always
