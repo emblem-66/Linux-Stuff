@@ -4,14 +4,21 @@ Image=ghcr.io/advplyr/audiobookshelf:latest
 AutoUpdate=registry
 NoNewPrivileges=true
 PublishPort=13378:80
+
+# Internal volumes (managed by Podman)
+#Volume=jellyfin-config:/config:Z
+#Volume=jellyfin-cache:/cache:Z
+
+Volume=/mnt/orico_a/containers/audiobookshelf/config:/config:Z
+Volume=/mnt/orico_a/containers/audiobookshelf/metadata:/metadata:Z
+
 #Volume=/var/home/pc/abs-media/audiobooks:/audiobooks:ro,Z
 #Volume=</path/to/books>:/books
 #Volume=/var/home/pc/abs-media/podcasts:/podcasts
 #Volume=audiobookshelf_config:/config
 #Volume=audiobookshelf_metadata:/metadata
-Volume=/mnt/orico_a/containers/audiobookshelf/config:/config:Z
-Volume=/mnt/orico_a/containers/audiobookshelf/metadata:/metadata:Z
 
+# External bind mount for media
 Volume=/mnt/orico_a/media/audiobooks:/audiobooks:ro,Z
 #Volume=</path/to/books>:/books
 #Volume=/var/home/pc/abs-media/podcasts:/podcasts
