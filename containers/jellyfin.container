@@ -8,13 +8,13 @@ UserNS=keep-id
 # Internal volumes (managed by Podman)
 #Volume=jellyfin-config:/config:Z
 #Volume=jellyfin-cache:/cache:Z
-Volume=/mnt/das/containers/jellyfin/config:/config:Z
-Volume=/mnt/das/containers/jellyfin/cache:/cache:Z
+Volume=/mnt/orico_a/containers/jellyfin/config:/config:Z
+Volume=/mnt/orico_a/containers/jellyfin/cache:/cache:Z
 
 # External bind mount for media
-Volume=/mnt/das/data/media/movies:/movies:ro,Z
-Volume=/mnt/das/data/media/shows:/shows:ro,Z
-Volume=/mnt/das/data/media/videos:/videos:ro,Z
+Volume=/mnt/orico_a/media/movies:/movies:ro,Z
+Volume=/mnt/orico_a/media/shows:/shows:ro,Z
+Volume=/mnt/orico_a/media/videos:/videos:ro,Z
 
 [Service]
 # Make systemd treat exit code 143 (SIGTERM) as normal
