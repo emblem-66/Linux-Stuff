@@ -38,7 +38,8 @@ PublishPort=9999:9999
 #Volume=stash-blobs:/blobs:Z
 #Volume=stash-generated:/generated:Z
 
-Volume=/etc/localtime:/etc/localtime:ro,Z
+#Volume=/etc/localtime:/etc/localtime:ro,Z
+
 Volume=/mnt/orico_a/containers/stash/config:config:Z
 Volume=/mnt/orico_a/containers/stast/metadata:/metadata:Z
 Volume=/mnt/orico_a/containers/stash/cache:/cache:Z
