@@ -48,7 +48,7 @@ Volume=/mnt/orico_a/containers/stash/generated:/generated:Z
 
 
 #Volume=/var/home/pc/stash-data:/data:ro,Z
-Volume=/mnt/orico_a/data/media_xxx/video:/data:ro,Z
+Volume=/mnt/orico_a/media_xxx/video:/data:ro,Z
 
 [Service]
 Restart=always
