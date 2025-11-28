@@ -15,9 +15,6 @@
 #[Install]
 #WantedBy=default.target
 
-
-
-
 [Container]
 Image=docker.io/stashapp/stash:latest
 ContainerName=stash
@@ -46,8 +43,6 @@ Volume=/mnt/orico_a/containers/stash/cache:/cache:Z
 Volume=/mnt/orico_a/containers/stash/blobs:/blobs:Z
 Volume=/mnt/orico_a/containers/stash/generated:/generated:Z
 
-
-#Volume=/var/home/pc/stash-data:/data:ro,Z
 Volume=/mnt/orico_a/media_xxx/video:/data:ro,Z
 
 [Service]
