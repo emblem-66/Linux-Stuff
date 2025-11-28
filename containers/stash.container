@@ -43,7 +43,7 @@ Volume=/mnt/orico_a/containers/stash/cache:/cache:Z
 Volume=/mnt/orico_a/containers/stash/blobs:/blobs:Z
 Volume=/mnt/orico_a/containers/stash/generated:/generated:Z
 
-Volume=/mnt/orico_a/media_xxx/videos:/data:ro,Z
+Volume=/mnt/orico_a/media_xxx:/data:ro,Z
 
 [Service]
 Restart=always
