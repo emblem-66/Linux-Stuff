@@ -1,3 +1,0 @@
-[Pod]
-Network=jellyfin.network
-PodName=jellyfin
