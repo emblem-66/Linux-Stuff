@@ -5,3 +5,7 @@
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="d030", MODE="0660", GROUP="ariadne", TAG+="uaccess", TAG+="udev-acl"
 # KEYCHRON M6 - USB
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="d03f", MODE="0660", GROUP="ariadne", TAG+="uaccess", TAG+="udev-acl"
+
+
+# QMK (Rapture FOXTROT)
+# curl -fsSL https://install.qmk.fm | sh
