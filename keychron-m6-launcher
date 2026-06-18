@@ -9,3 +9,20 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct
 
 # QMK (Rapture FOXTROT)
 # curl -fsSL https://install.qmk.fm | sh
+
+
+❯ bat /etc/udev/rules.d/99-keychron.rules
+─────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     │ File: /etc/udev/rules.d/99-keychron.rules
+─────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 │ # lsusb | grep -i keychron
+   2 │
+   3 │ # K2 Max Wired
+   4 │ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="0a20", TAG+="uaccess"
+   5 │ # K2 Max 2.4G
+   6 │ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="d030", TAG+="uaccess"
+   7 │ # M6 Wired
+   8 │ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="d060", TAG+="uaccess"
+   9 │ # M6 2.4G
+  10 │ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="d026", TAG+="uaccess"
+─────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
