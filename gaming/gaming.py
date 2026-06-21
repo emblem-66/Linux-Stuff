@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# Taken from Zena Linux and customized a bit
+# source: https://github.com/Zena-Linux/Zena/blob/main/system-files/common/usr/local/bin/gaming
+
 import os
 import sys
 import subprocess
