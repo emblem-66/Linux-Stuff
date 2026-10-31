@@ -1,5 +1,7 @@
 # BTRFS
 
+Work in progress
+
 ## RAID1
 
 ### create btrfs raid 1
@@ -64,6 +66,7 @@ btrfs device stats --check /mnt/pool/
 
 ### Automation with btrbk
 
+```
 ❯ cat /etc/btrbk/btrbk.conf
 # Keep every snapshot for at least 2 days, then thin out by age
 snapshot_preserve_min   2d
@@ -84,3 +87,4 @@ volume /mnt/pool
 
 ~
 ❯
+```
