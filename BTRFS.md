@@ -15,6 +15,9 @@ List drives
 ```
 lsblk -f
 ```
+> [!CAUTION]
+> Following steps will format your drives
+
 Create raid1
 ```
 wipefs /dev/sdX /dev/sdY
