@@ -3,10 +3,12 @@
 ## RAID1
 
 ### create btrfs raid 1
+
 '''
 wipefs /dev/sdX /dev/sdY
 mkfs.btrfs -L label -m raid1 -d raid1 /dev/sdX /dev/sdY
 '''
+
 ### mount btrfs raid 1
 
 
