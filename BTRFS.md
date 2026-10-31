@@ -1,6 +1,7 @@
 # BTRFS
 
-Work in progress
+> [!NOTE]
+> Work in progress
 
 ```
 https://btrfs.readthedocs.io/en/latest
@@ -101,6 +102,8 @@ volume /mnt/pool
 ❯
 ```
 
+---
+
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
 
@@ -114,8 +117,6 @@ volume /mnt/pool
 > Urgent info that needs immediate user attention to avoid problems.
 
 > [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
-> 
-
-Note:
-these are just my personal notes on how I setup btrfs raid1. Claude/Gemini/ChatGPT heavily involved. DO NOT USE, you may risk your data.
+> This file contains notes for me on how to setup BTRFS RAID1, and may not fit your needs.
+> Claude/Gemini/ChatGPT heavily involved in planning and testing.
+> DO NOT USE, you may risk your data.
