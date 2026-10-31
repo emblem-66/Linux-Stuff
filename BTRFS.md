@@ -1,12 +1,12 @@
-# BTRFS RAID1
+# BTRFS
 
-## BTRFS RAID1
+## RAID1
 
 ### create btrfs raid 1
-
+'''
 wipefs /dev/sdX /dev/sdY
 mkfs.btrfs -L label -m raid1 -d raid1 /dev/sdX /dev/sdY
-
+'''
 ### mount btrfs raid 1
 
 
@@ -15,19 +15,18 @@ mkfs.btrfs -L label -m raid1 -d raid1 /dev/sdX /dev/sdY
 
 
 
-### subvolumes
+## Subvolumes
+
+### create subvolumes
+
+wipefs /dev/sdX /dev/sdY
+mkfs.btrfs -L label -m raid1 -d raid1 /dev/sdX /dev/sdY
+
+### mount subvolumes
 
 
 
-
-
-
-## setup btrfs scrub with systemd
-
-
-
-
-
+## Snapshots
 
 
 
@@ -36,7 +35,7 @@ btrfs device stats --check
 btrfs device stats --check /mnt/pool/
 
 
-# btrbk
+### Automation with btrbk
 
 ❯ cat /etc/btrbk/btrbk.conf
 # Keep every snapshot for at least 2 days, then thin out by age
