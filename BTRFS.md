@@ -102,4 +102,5 @@ volume /mnt/pool
 ```
 
 
-#### Note: these are just my personal notes on how I setup btrfs raid1. Claude/Gemini/ChatGPT heavily involved. DO NOT USE, you may risk your data.
+#### Note:
+##### these are just my personal notes on how I setup btrfs raid1. Claude/Gemini/ChatGPT heavily involved. DO NOT USE, you may risk your data.
