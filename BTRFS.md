@@ -2,6 +2,10 @@
 
 Work in progress
 
+```
+https://btrfs.readthedocs.io/en/latest
+```
+
 ## RAID1
 
 ### create btrfs raid 1
@@ -31,7 +35,7 @@ lsblk -f
 Add to `/etc/fstab`
 
 ```
-UUID=<raid1-uuid> /mnt/pool      btrfs   defaults,noatime,compress=zstd:3,nofail,x-systemd.device-timeout=10 0 0
+UUID=<raid1-uuid> /mnt/raid      btrfs   defaults,noatime,compress=zstd:3,nofail,x-systemd.device-timeout=10 0 0
 ```
 
 Options:
@@ -40,14 +44,22 @@ Options:
 
 
 
-
+Check
+Should show stats for both /dev/sdX and /dev/sdY
+```
+sudo btrfs filesystem show /mnt/raid
+sudo btrfs filesystem usage /mnt/raid
+sudo btrfs scrub start -Bd /mnt/raid
+sudo btrfs device stats /mnt/raid
+```
 
 ## Subvolumes
 
 ### create subvolumes
 
-wipefs /dev/sdX /dev/sdY
-mkfs.btrfs -L label -m raid1 -d raid1 /dev/sdX /dev/sdY
+```
+btrfs subvolume create 
+```
 
 ### mount subvolumes
 
