@@ -4,14 +4,37 @@
 
 ### create btrfs raid 1
 
-'''
+List drives
+```
+lsblk -f
+```
+Create raid1
+```
 wipefs /dev/sdX /dev/sdY
 mkfs.btrfs -L label -m raid1 -d raid1 /dev/sdX /dev/sdY
-'''
+```
+Check raid1
+```
+lsblk -f
+```
+Same UUID for 2 drives
 
 ### mount btrfs raid 1
 
+Check raid1 UUID
+```
+lsblk -f
+```
 
+Add to `/etc/fstab`
+
+```
+UUID=<raid1-uuid> /mnt/pool      btrfs   defaults,noatime,compress=zstd:3,nofail,x-systemd.device-timeout=10 0 0
+```
+
+Options:
+- defaults
+- noatime
 
 
 
@@ -26,6 +49,8 @@ mkfs.btrfs -L label -m raid1 -d raid1 /dev/sdX /dev/sdY
 
 ### mount subvolumes
 
+
+UUID=<> /srv/movies    btrfs   subvol=movies,ro,noatime,nodev,nosuid,noexec,compress=zstd:3,nofail,x-systemd.device-timeout=10 0 0
 
 
 ## Snapshots
